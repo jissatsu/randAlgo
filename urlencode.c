@@ -1,14 +1,6 @@
 #include <stdio.h>
-#include <limits.h>
-#include <float.h>
-#include <time.h>
-#include <stddef.h>
-#include <stdbool.h>
 #include <stdlib.h>
 #include <string.h>
-#include <errno.h>
-#include <stdarg.h>
-#include <ctype.h>
 
 unsigned char * urlencode( unsigned char const *str );
 
