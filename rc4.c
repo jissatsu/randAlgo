@@ -4,6 +4,7 @@
 #include <time.h>
 
 unsigned char * gen_random( size_t size );
+void freeString( void *str );
 void RC4( unsigned char *S, unsigned char const *key, int keylen, unsigned char *plain_t, unsigned char *cipher_t );
 
 unsigned char S[256];
@@ -23,6 +24,7 @@ int main( void ) {
 	/* decipher */
 	RC4( S, key, strlen( key ), cipher_t, plain_t );
 	printf( "%s\n", plain_t );
+	freeString( cipher_t );
 	return 0;
 }
 
@@ -75,4 +77,8 @@ unsigned char * gen_random( size_t size ) {
 		}
 	}
 	return randStr;
+}
+
+void freeString( void *str ) {
+	free( str );
 }
