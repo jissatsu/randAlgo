@@ -21,13 +21,13 @@ void bubble_sort( int *arr, size_t size ) {
 	cicles = size;
 
 	while ( cicles ) {
-		for ( i = 0 ; i < (size - 1) ; i++ ) {
-			if ( arr[i] > arr[i + 1] ) {
-				temp       = arr[i];
-				arr[i]     = arr[i + 1];
-				arr[i + 1] = temp;
-			}
+	    for ( i = 0 ; i < (size - 1) ; i++ ) {
+		if ( arr[i] > arr[i + 1] ) {
+		    temp       = arr[i];
+			arr[i]     = arr[i + 1];
+			arr[i + 1] = temp;
 		}
+	    }
 		cicles--;
 	}
 }
