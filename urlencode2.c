@@ -14,7 +14,6 @@ int main( void ) {
 	encoded = urlencode( url );
 	fprintf( stdout, "%s\n", encoded );
 	freeString( encoded );
-	
 	return 0;
 }
 
