@@ -2,18 +2,25 @@
 #include <stdlib.h>
 #include <string.h>
 
-unsigned char * strrev( unsigned char const *str );
+unsigned char * strrev1( unsigned char const *str );
+unsigned char * strrev2( unsigned char *str );
 
 int main( void ) {
-	unsigned char str[] = "Hello World!";
+	unsigned char str1[] = "Hello World!";
+	unsigned char str2[] = "Hello World!";
 	unsigned char *reversed;
-
-	reversed = strrev( str );
+	
+	/* strrev1 */
+	reversed = strrev1( str1 );
 	fprintf( stdout, "%s\n", reversed );
+	
+	/* strrev2 */
+	strrev2( str2 );
+	fprintf( stdout, "%s\n", str2 );
 	return 0;
 }
 
-unsigned char * strrev( unsigned char const *str ) {
+unsigned char * strrev1( unsigned char const *str ) {
 	int i, j;
 	size_t len;
 	unsigned char *newStr;
@@ -26,4 +33,15 @@ unsigned char * strrev( unsigned char const *str ) {
 	}
 	newStr[j] = '\x00';
 	return newStr;
+}
+
+unsigned char * strrev2( unsigned char *str ){
+	int i, j;
+	unsigned char temp;
+
+	for ( i = 0, j = strlen( str ) - 1 ; i < j ; i++, j-- ) {
+		temp   = str[i];
+		str[i] = str[j];
+		str[j] = temp;
+	}
 }
