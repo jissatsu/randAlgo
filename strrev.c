@@ -3,7 +3,7 @@
 #include <string.h>
 
 unsigned char * strrev1( unsigned char const *str );
-unsigned char * strrev2( unsigned char *str );
+void strrev2( unsigned char *str );
 
 int main( void ) {
 	unsigned char str1[] = "Hello World!";
@@ -35,7 +35,7 @@ unsigned char * strrev1( unsigned char const *str ) {
 	return newStr;
 }
 
-unsigned char * strrev2( unsigned char *str ){
+void strrev2( unsigned char *str ){
 	int i, j;
 	unsigned char temp;
 
