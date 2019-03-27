@@ -1,9 +1,6 @@
 #include <stdio.h>
 #include <string.h>
-#include <stdarg.h>
 #include <stdlib.h>
-#include <time.h>
-#include <limits.h>
 
 int strindexr( char *s, char *t );
 
