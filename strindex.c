@@ -1,15 +1,12 @@
 #include <stdio.h>
 #include <string.h>
-#include <stdarg.h>
 #include <stdlib.h>
-#include <time.h>
-#include <limits.h>
 
 int strindexr( char *s, char *t );
 
 int main( void ) {
-	char str1[] = "tastes good the sandwich DO YOU know sandwich";
-	char str2[] = "tastes good the sandwich DO YOU know sandwic";
+	char str1[] = "tastes good the sandwich DO YOU know sandwich"; /* xD */
+	char str2[] = "tastes good the sandwich DO YOU know sandwic";  /* xD */
 	char pattern[] = "wich";
 	
 	fprintf( stdout, "String 1 -> %d\n", strindexr( str1, pattern ) );
