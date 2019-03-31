@@ -3,7 +3,6 @@
 #include <stdarg.h>
 #include <stdlib.h>
 #include <time.h>
-#include <limits.h>
 
 void freeString( void *str );
 unsigned char * gen_random( size_t len );
