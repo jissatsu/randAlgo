@@ -34,8 +34,7 @@ unsigned char * urlencode( unsigned char const *url, size_t len ) {
 				else if ( (*url >= 'a' && *url <= 'z') || (*url >= 'A' && *url <= 'Z') || (*url >= '0' && *url <= '9') ||
 					*url == '~' || *url == '.' || *url == '-' || *url == '_') {
 					encoded[i++] = *url;
-				}
-				else{
+				} else{
 					encoded[i++] = '%';
 					encoded[i++] = toupper( chars[ *url >> 4 ] );
 					encoded[i++] = toupper( chars[ *url & 15 ] );
