@@ -59,7 +59,7 @@ int split_string( char *str, size_t len, char *delim, char **tokens, int *num_to
 
 	copy = str;
 
-	/* remove leading and trailing WSP and search for delimeter in the string */
+	/* remove leading and trailing WSP and delimeters */
 	while ( isspace( *str ) || *str == *delim )
 		str++;
 	start  = str;
