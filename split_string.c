@@ -1,20 +1,7 @@
 #include <stdio.h>
 #include <string.h>
-#include <strings.h>
-#include <stdarg.h>
 #include <stdlib.h>
-#include <time.h>
 #include <ctype.h>
-#include <sys/socket.h>
-#include <sys/types.h>
-#include <sys/wait.h>
-#include <sys/ptrace.h>
-#include <sys/reg.h>
-#include <netinet/in.h>
-#include <arpa/inet.h>
-#include <netdb.h>
-#include <pthread.h>
-#include <unistd.h>
 
 int wcount( const char *str, size_t len );
 int split_string( char *str, size_t len, char *delim, char **tokens, int *num_tokens, char *errbuf );
