@@ -116,7 +116,6 @@ int split_string( char *str, size_t len, char *delim, char **tokens, int *num_to
 				tokens[i] = (char *) malloc( k * sizeof( char * ) );
 				strcpy( tokens[i], word );
 			}
-			/* the number of indices is the number of words in the string */
 			*num_tokens = indices_size;
 			return 0;
 		}
