@@ -105,7 +105,6 @@ int split_string( char *str, size_t len, char *delim, char **tokens, int *num_to
 
 		string       = start;
 		indices_size = j;
-
 		/* if there are any indices stored in the array, proceed */
 		if ( indices_size > 0 ) {
 			for ( i = 0 ; i < indices_size ; i++ ) {
