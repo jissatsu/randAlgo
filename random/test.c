@@ -36,7 +36,6 @@ int main( int argc, char *argv[] ) {
 }
 
 int filecomp( int fd1, int fd2, char *line ) {
-    int line_num;
     char line1[BUFSIZ];
     char line2[BUFSIZ];
     FILE *fp1, *fp2;
@@ -48,13 +47,13 @@ int filecomp( int fd1, int fd2, char *line ) {
     fp1 = fdopen( fd1, "r" );
     fp2 = fdopen( fd2, "r" );
     
-    line_num = 0;
     while ( fgets( line1, BUFSIZ, fp1 ) != NULL && fgets( line2, BUFSIZ, fp2 ) != NULL ) {
         if ( strcmp( line1, line2 ) < 0 ) {
             strcpy( line, "[FILE] - " );
             strcat( line, FILE_0 );
             strcat( line, "\n" );
             strcat( line, line1 );
+            fclose( fp1 ), fclose( fp2 );
             return 1;
         } 
         else if ( strcmp( line1, line2 ) > 0 ) {
@@ -62,11 +61,11 @@ int filecomp( int fd1, int fd2, char *line ) {
             strcat( line, FILE_1 );
             strcat( line, "\n" );
             strcat( line, line2 );
+            fclose( fp1 ), fclose( fp2 );
             return 1;
         }
-        line_num++;
     }
-    strcpy( line, "" );
+    strcpy( line, "" ), fclose( fp1 ), fclose( fp2 );
     return 0;
 }
 
