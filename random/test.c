@@ -1,3 +1,5 @@
+# a program that compares 2 files and prints the first different line
+
 #include <stdio.h>
 #include <string.h>
 #include <stdarg.h>
