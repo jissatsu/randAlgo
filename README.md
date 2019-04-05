@@ -1,2 +1,2 @@
 # randAlgo
-my collection of random algorithms
+my collection of random algorithms and random stuff

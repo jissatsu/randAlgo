@@ -1,20 +1,7 @@
 #include <stdio.h>
 #include <string.h>
-#include <strings.h>
-#include <stdarg.h>
 #include <stdlib.h>
-#include <time.h>
 #include <ctype.h>
-#include <sys/socket.h>
-#include <sys/types.h>
-#include <sys/wait.h>
-#include <sys/ptrace.h>
-#include <sys/reg.h>
-#include <netinet/in.h>
-#include <arpa/inet.h>
-#include <netdb.h>
-#include <pthread.h>
-#include <unistd.h>
 
 int wcount( const char *str, size_t len );
 int split_string( char *str, size_t len, char *delim, char **tokens, int *num_tokens, char *errbuf );
@@ -72,7 +59,7 @@ int split_string( char *str, size_t len, char *delim, char **tokens, int *num_to
 
 	copy = str;
 
-	/* remove leading and trailing WSP and search for delimeter in the string */
+	/* remove leading and trailing WSP and delimeters */
 	while ( isspace( *str ) || *str == *delim )
 		str++;
 	start  = str;
@@ -118,7 +105,6 @@ int split_string( char *str, size_t len, char *delim, char **tokens, int *num_to
 
 		string       = start;
 		indices_size = j;
-
 		/* if there are any indices stored in the array, proceed */
 		if ( indices_size > 0 ) {
 			for ( i = 0 ; i < indices_size ; i++ ) {
@@ -130,7 +116,6 @@ int split_string( char *str, size_t len, char *delim, char **tokens, int *num_to
 				tokens[i] = (char *) malloc( k * sizeof( char * ) );
 				strcpy( tokens[i], word );
 			}
-			/* the number of indices is the number of words in the string */
 			*num_tokens = indices_size;
 			return 0;
 		}
