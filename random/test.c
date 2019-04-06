@@ -74,7 +74,7 @@ int filesize( int fd ) {
     int c, i = 0;
 
     if ( (fp = fdopen( fd, "r" )) != NULL ) {
-        while ( ( c = getc( fp ) ) != EOF && !feof( fp ) )
+        while ( ( c = getc( fp ) ) != EOF )
             i++;
         fseek( fp, 0, SEEK_SET );
         return i;
