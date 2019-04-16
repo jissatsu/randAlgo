@@ -17,8 +17,7 @@ int main( void ) {
 void bubble_sort( int *arr, size_t size ) {
 	int i;
 	int temp;
-	int cicles;
-	cicles = size;
+	int cicles = size;
 
 	while ( cicles ) {
 	    for ( i = 0 ; i < (size - 1) ; i++ ) {
