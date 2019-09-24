@@ -26,7 +26,6 @@ int main( int argc, char **argv ){
         tail = optind;
         while ( (len = __getline( line, MAXLINE )) > 0 ) 
         {
-            line[len - 1] = '\x00';
             lines[nlines] = (char *) malloc( MAXLINE );
             strcpy( lines[nlines], line );
             nlines++;
@@ -56,13 +55,13 @@ void __writelines( char **lines, int nlines, int tailcount ){
     int i;
     if ( nlines >= tailcount ) {
         for ( i = nlines - 1 ; --tailcount >= 0 ; i-- ) {
-            fprintf( stdout, "%s\n", lines[i] );
+            fprintf( stdout, "%s", lines[i] );
         }
         return;
     }
     /**/
     for ( i = nlines - 1 ; i >= 0 ; i-- ) {
-        fprintf( stdout, "%s\n", lines[i] );
+        fprintf( stdout, "%s", lines[i] );
     }
 }
 
