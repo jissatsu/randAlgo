@@ -52,15 +52,10 @@ int __getline( char *line, int max ){
 
 /* __writelines: write a bunch of lines to STDOUT */
 void __writelines( char **lines, int nlines, int tailcount ){
-    int i;
-    if ( nlines >= tailcount ) {
-        for ( i = nlines - 1 ; --tailcount >= 0 ; i-- ) {
-            fprintf( stdout, "%s", lines[i] );
-        }
-        return;
-    }
-    /**/
-    for ( i = nlines - 1 ; i >= 0 ; i-- ) {
+    int i, n;
+    n = ( nlines >= tailcount ) ? tailcount : nlines ;
+    
+    for ( i = nlines - 1 ; --n >= 0 ; i-- ) {
         fprintf( stdout, "%s", lines[i] );
     }
 }
