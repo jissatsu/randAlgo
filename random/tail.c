@@ -1,6 +1,7 @@
 #include "tail.h"
 
-int main( int argc, char **argv ){
+int main( int argc, char **argv )
+{
     int len;
     int opt;
     int tail   = 0;
@@ -36,7 +37,8 @@ int main( int argc, char **argv ){
 }
 
 /* __getline: read a line of input */
-int __getline( char *line, int max ){
+int __getline( char *line, int max )
+{
     int c, i;
     
     i = 0;
@@ -51,7 +53,8 @@ int __getline( char *line, int max ){
 }
 
 /* __writelines: write a bunch of lines to STDOUT */
-void __writelines( char **lines, int nlines, int tailcount ){
+void __writelines( char **lines, int nlines, int tailcount )
+{
     int i, n;
     n = ( nlines >= tailcount ) ? tailcount : nlines ;
     
@@ -61,7 +64,8 @@ void __writelines( char **lines, int nlines, int tailcount ){
 }
 
 /* _xfree_l: free the allocated lines */
-void _xfree_l( char **lines, int max ){
+void _xfree_l( char **lines, int max )
+{
     int i;
     for ( i = 0 ; i < max ; i++ ) {
         free( lines[i] );
