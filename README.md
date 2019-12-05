@@ -1,2 +1,2 @@
-# randAlgo
+# rndlg
 my collection of random algorithms and random stuff
