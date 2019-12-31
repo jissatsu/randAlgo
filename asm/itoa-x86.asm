@@ -1,3 +1,5 @@
+; x86 (32-bit) version of itoa()
+
 section .data
     num  dw 2999
     divi dw 10
