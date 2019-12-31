@@ -4,7 +4,7 @@ section .data
     num  dw 2999
     divi dw 10
 
-    index  dd 4
+    index  db 4
     result db 0
     remain db 0
 
@@ -16,7 +16,7 @@ section .text
 _start:
     mov dx, 0x0000
     mov ax, word [num]
-    mov ebx, dword [index]
+    movzx ebx, byte [index]
 itoaLoop:
     div word [divi]
     add dx, 48
