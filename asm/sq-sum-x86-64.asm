@@ -35,8 +35,8 @@ itoaNum:
     cmp al, 0
     jne itoaNum
 printNum:
-    mov rax, 1
-    mov rdi, 1
+    mov rax, WRITE
+    mov rdi, STDOUT
     mov rsi, string
     mov rdx, 4
     syscall
