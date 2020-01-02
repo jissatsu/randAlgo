@@ -1,3 +1,5 @@
+; sum of squares
+
 %define EXIT    0x3c
 %define SUCCESS 0x00
 
