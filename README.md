@@ -1,2 +1,2 @@
 # rndlg
-my collection of random algorithms and random stuff
+random algorithms and random stuff
