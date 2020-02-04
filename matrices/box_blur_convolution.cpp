@@ -19,7 +19,7 @@ T img( CImg<T> *image, int x, int y, int channel )
 
 template <class T>
 /*
- * get a 3x3 region from image (for specified channel)
+ * get a 5x5 region from image (for specified channel)
  */
 vector< vector<T> > region5x5( CImg<T> *image, int x, int y, int channel )
 {
