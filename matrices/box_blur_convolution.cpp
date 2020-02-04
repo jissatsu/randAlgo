@@ -57,7 +57,7 @@ short identity_img( CImg<T> *image )
 {
     vector< vector<T> > region;
     T pix;
-    char identity_matrix[5][5] = {
+    char box_blur[5][5] = {
         { 1, 1, 1, 1, 1 },
         { 1, 1, 1, 1, 1 },
         { 1, 1, 1, 1, 1 },
@@ -72,7 +72,7 @@ short identity_img( CImg<T> *image )
         for ( int y = 0 ; y < image->height() ; y++ ) {
             for ( short i = 0 ; i < 3 ; i++ ) {
                 region  = region5x5( image, x, y, i );
-                pix     = convolution( identity_matrix, region );
+                pix     = convolution( box_blur, region );
                 *img_copy->data( x, y, 0, i ) = pix;
             }
         }
