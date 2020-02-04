@@ -32,7 +32,7 @@ vector< vector<T> > region5x5( CImg<T> *image, int x, int y, int channel )
         region[j][3] = img( image, x+( 1), y+i, channel );
         region[j][4] = img( image, x+( 2), y+i, channel );
     }
-    return region;
+    return region; 
 }
 
 template <class T>
