@@ -25,18 +25,11 @@ vector< vector<T> > region3x3( CImg<T> *image, int x, int y, int channel )
 {
     vector<vector<T> > region(3, vector<T>(3, 0));
 
-    region[0][0] = img( image, x+(-1), y+(-1), channel );
-    region[0][1] = img( image, x+( 0), y+(-1), channel );
-    region[0][2] = img( image, x+( 1), y+(-1), channel );
-    
-    region[1][0] = img( image, x+(-1), y+( 0), channel );
-    region[1][1] = img( image, x+( 0), y+( 0), channel );
-    region[1][2] = img( image, x+( 1), y+( 0), channel );
-    
-    region[2][0] = img( image, x+(-1), y+( 1), channel );
-    region[2][1] = img( image, x+( 0), y+( 1), channel );
-    region[2][2] = img( image, x+( 1), y+( 1), channel );
-
+    for ( short i = -1, j = 0 ; i < 1 ; i++, j++ ) {
+        region[j][0] = img( image, x+(-1), y+i, channel );
+        region[j][1] = img( image, x+( 0), y+i, channel );
+        region[j][2] = img( image, x+( 1), y+i, channel );
+    }
     return region;
 }
 
@@ -49,13 +42,9 @@ T convolution( char kernel[3][3], vector< vector<T> > region )
     vector< vector<T> > ac_matrix(3, vector<T>(3, 0));
     unsigned char pixval = 0;
     
-    for ( short j = 0 ; j < 3 ; j++ ) {
-        ac_matrix[j][0] = kernel[j][0] * region[j][0];
-        ac_matrix[j][1] = kernel[j][1] * region[j][1];
-        ac_matrix[j][2] = kernel[j][2] * region[j][2];
-    }
     for ( short i = 0 ; i < 3 ; i++ ) {
-        pixval += (ac_matrix[i][0] + ac_matrix[i][1] + ac_matrix[i][2]);
+        pixval += (kernel[i][0] * region[i][0]) + (kernel[i][1] * region[i][1]) +\
+                  (kernel[i][2] * region[i][2]);
     }
     return pixval;
 }
