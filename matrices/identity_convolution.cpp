@@ -13,9 +13,6 @@ using namespace cimg_library;
 template <class T>
 T img( CImg<T> *image, int x, int y, int channel )
 {
-    int w = image->width();
-    int h = image->height();
-
     T pix = ( x < 0 || y < 0 ) ? 0 : PIX( x, y, 0, channel ) ;
     return pix;
 }
