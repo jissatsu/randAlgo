@@ -1,9 +1,4 @@
 ﻿using System;
-using System.Text;
-using System.Collections.Generic;
-using System.Numerics;
-using System.Linq;
-using System.Text.RegularExpressions;
 
 namespace zottt
 {
